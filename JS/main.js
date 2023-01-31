@@ -123,22 +123,22 @@ while (seguirComprando != false) {
 
 // 3.MOSTRAR LOS PRODUCTOS DEL CARRITO, CANTIDADES Y SUBTOTAL
 
-let Subtotal = 0
+let Subtotal = precio * cantidadSeleccionada
 
 function subtotal () {
 
     switch (Subtotal) {
         case prendaSeleccionada == buzo.nombre:
-            return alert("El subtotal de  la compra es de " +Subtotal);
+            alert("El subtotal de  la compra es de " +Subtotal);
             break;
         case prendaSeleccionada == pantalon.nombre:
-            return alert("El subtotal de  la compra es de " +Subtotal);
+            alert("El subtotal de  la compra es de " +Subtotal);
             break;
         case prendaSeleccionada == camisa.nombre:
-            return alert("El subtotal de  la compra es de " +Subtotal);
+            alert("El subtotal de  la compra es de " +Subtotal);
             break;
         case prendaSeleccionada == remera.nombre:
-            return alert("El subtotal de  la compra es de " +Subtotal);
+            alert("El subtotal de  la compra es de " +Subtotal);
             break;
         default:
             ("Los datos ingresados no son correctos");
