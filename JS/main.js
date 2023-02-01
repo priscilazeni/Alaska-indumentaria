@@ -96,6 +96,7 @@ while (seguirComprando != false) {
         default:
             alert("La prenda seleccionada no esta en stock actualmente, por favor ingrese otra prenda");
             alert("Las prendas en stock actualmente son " + (buzo.nombre) + " , " + (pantalon.nombre) + " , " + (camisa.nombre) + " , " + (remera.nombre) + ".")
+            prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
            
     }
 
@@ -116,8 +117,6 @@ if ((envio == "envio a domicilio") && (subtotal >= 10000)) {
     alert ("El costo del envio a domicilio es de $1500")
     alert ("El total abonar es $"+totalAbonar)
     datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
-} else (envio == "retirar por el local"); {
+} else {
     datosRetiro = prompt ("Tu pedido estara disponible para retirar en los proximos 7 dias habiles, te enviaremos un mensaje cuando este disponible. Dejanos tu nombre completo y telefono")
 }   
-
-// el condicional no se corta cuando elijo envio a domicilio, aparece el else tambien, si elijo solo retirar por el local figura solo el else.
