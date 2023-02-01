@@ -117,7 +117,7 @@ while (seguirComprando != false) {
 
 
         default:
-            alert("Esta prenda no esta actualmente en stock");
+            prendaSeleccionada = prompt ("La prenda seleccionada no esta en stock actualmente, por favor ingrese otra prenda");
     }
 }
 
