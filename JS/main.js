@@ -32,9 +32,8 @@ const remera = {
     precio: 3000
 }
 
-// //2.INTERACCION CON EL USUARIO, SELECCION DE ARTICULO A COMPRAR, CANTIDAD, ETC
+// //2.INTERACCION CON EL USUARIO, SELECCION DE ARTICULO A COMPRAR, CANTIDAD. MUESTRA DE SUBTOTAL DE LA COMPRA
 
-// let prendaSeleccionada = ""
 let cantidadSeleccionada = 0
 let seguirComprando = true
 let subtotal = 0
@@ -46,7 +45,6 @@ let prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
 
 
 function comprar (objeto) {
-    // prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
     alert("Seleccionaste " + objeto.nombre);
     alert("El color en stock es " + objeto.color + " y el talle es " + objeto.talle);
     alert("El costo por unidad es de $" + objeto.precio);
@@ -57,23 +55,20 @@ function comprar (objeto) {
         cantidadSeleccionada = parseInt(prompt("Cuantos " + objeto.nombre + " queres comprar?"))
     } else {
         alert("Queres comprar " + cantidadSeleccionada + " " + objeto.nombre);
+        subtotal += cantidadSeleccionada * objeto.precio
     }
 
     seguirComprando = confirm("Queres seguir comprando?");
 
-    // subtotal += cantidadSeleccionada * objeto.precio
-    // alert ("El subtotal de tu compra es de $ "+subtotal)
 
     if (seguirComprando == true) {
-        prendaSeleccionada = prompt("Que prenda queres comprar?")
+        prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
      } else {
-        subtotal += cantidadSeleccionada * objeto.precio
         alert ("El subtotal de tu compra es de $"+subtotal)
      }
 
 }
 
-// cuando elijo dos prendas para comprar distintas, no me suma las cantidades ni los precios, me toma el precio de la ultima prende elejida
 
 while (seguirComprando != false) {
     switch (prendaSeleccionada) {
@@ -102,7 +97,7 @@ while (seguirComprando != false) {
 
 }
 
-//4.DAR A ELEGIR ENVIO O RETIRO POR EL LOCAL Y TOTAL DE LA COMPRA
+//3.DAR A ELEGIR ENVIO O RETIRO POR EL LOCAL Y TOTAL DE LA COMPRA
 
 let envio = prompt ("Elegi ENVIO A DOMICILIO o RETIRAR POR EL LOCAL").toLowerCase()
 let datosEnvio = ""
