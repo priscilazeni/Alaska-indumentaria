@@ -34,129 +34,90 @@ const remera = {
 
 // //2.INTERACCION CON EL USUARIO, SELECCION DE ARTICULO A COMPRAR, CANTIDAD, ETC
 
-// // A CORREGIR: CUANDO EL USUARIO ELIGE SEGUIR COMPRANDO COMO VOLVER A MOSTRARLE LOS PRODUCTOS EN STOCK Y QUE SIGA EL BUCLE SIN NECESIDAD DE INGRESAR DIRECTAMENTE EL NOMBRE DE UNA PRENDA, EN LUGAR DE ESO QUE DIGA "SEGUIR COMPRANDO" O "SI" PARA PODER HACERLO.
-
-// // CUANDO ESCRIBO EN MAYUSCULA CON EL TOLOWERCASE NO LO PASA A MINISCULA Y NO RECONOCE EL PRODUCTO, Y SINO DONDE PONERLO PARA QUE LO HAGA.
+// let prendaSeleccionada = ""
+let cantidadSeleccionada = 0
+let seguirComprando = true
+let subtotal = 0
 
 const nombre = prompt("Ingresa tu nombre")
 alert("Hola " + nombre + ", Bienvenida a Mango Indumentaria")
 alert("Las prendas en stock actualmente son " + (buzo.nombre) + " , " + (pantalon.nombre) + " , " + (camisa.nombre) + " , " + (remera.nombre) + ".")
-let prendaSeleccionada = prompt("Que prenda queres comprar?")
-let cantidadSeleccionada = 0
-let seguirComprando = true
+let prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
+
+
+function comprar (objeto) {
+    // prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
+    alert("Seleccionaste " + objeto.nombre);
+    alert("El color en stock es " + objeto.color + " y el talle es " + objeto.talle);
+    alert("El costo por unidad es de $" + objeto.precio);
+    cantidadSeleccionada = parseInt(prompt("Cuantos " + objeto.nombre + " queres comprar?"));
+
+    if (cantidadSeleccionada > objeto.cantidad) {
+        alert("No contamos con el stock ingresado, por favor ingrese otra cantidad")
+        cantidadSeleccionada = parseInt(prompt("Cuantos " + objeto.nombre + " queres comprar?"))
+    } else {
+        alert("Queres comprar " + cantidadSeleccionada + " " + objeto.nombre);
+    }
+
+    seguirComprando = confirm("Queres seguir comprando?");
+
+    // subtotal += cantidadSeleccionada * objeto.precio
+    // alert ("El subtotal de tu compra es de $ "+subtotal)
+
+    if (seguirComprando == true) {
+        prendaSeleccionada = prompt("Que prenda queres comprar?")
+     } else {
+        subtotal += cantidadSeleccionada * objeto.precio
+        alert ("El subtotal de tu compra es de $"+subtotal)
+     }
+
+}
+
+// cuando elijo dos prendas para comprar distintas, no me suma las cantidades ni los precios, me toma el precio de la ultima prende elejida
 
 while (seguirComprando != false) {
     switch (prendaSeleccionada) {
         case buzo.nombre.toLowerCase():
-            alert("Seleccionaste " + buzo.nombre);
-            alert("El color en stock es " + buzo.color + " y el talle es " + buzo.talle);
-            alert("El costo por unidad es de $" + buzo.precio);
-            cantidadSeleccionada = parseInt(prompt("Cuantos " + buzo.nombre + " queres comprar?"));
-            if (cantidadSeleccionada > buzo.cantidad) {
-                alert("No contamos con el stock ingresado, por favor ingrese otra cantidad")
-                cantidadSeleccionada = parseInt(prompt("Cuantos " + buzo.nombre + " queres comprar?"))
-            } else {
-                alert("Queres comprar " + cantidadSeleccionada + " " + buzo.nombre);
-            }
-            seguirComprando = confirm("Queres seguir comprando?");
-            if (seguirComprando == true) {
-                prendaSeleccionada = prompt("Que prenda queres comprar?")
-            }
+            comprar(buzo);
             break;
 
         case pantalon.nombre.toLowerCase():
-            alert("Seleccionaste " + pantalon.nombre);
-            alert("El color en stock es " + pantalon.color + " y el talle es " + pantalon.talle);
-            alert("El costo por unidad es de $" + pantalon.precio);
-            cantidadSeleccionada = parseInt(prompt("Cuantos " + pantalon.nombre + " queres comprar?"));
-            if (cantidadSeleccionada > pantalon.cantidad) {
-                alert("No contamos con el stock ingresado, por favor ingrese otra cantidad")
-                cantidadSeleccionada = parseInt(prompt("Cuantos " + pantalon.nombre + " queres comprar?"))
-            } else {
-                alert("Queres comprar " + cantidadSeleccionada + " " + pantalon.nombre);
-            }
-            seguirComprando = confirm("Queres seguir comprando?");
-            if (seguirComprando == true) {
-                prendaSeleccionada = prompt("Que prenda queres comprar?")
-            }
+            comprar(pantalon);
             break;
 
         case camisa.nombre.toLowerCase():
-            alert("Seleccionaste " + camisa.nombre);
-            alert("El color en stock es " + camisa.color + " y el talle es " + camisa.talle);
-            alert("El costo por unidad es de $" + camisa.precio);
-            cantidadSeleccionada = parseInt(prompt("Cuantos " + camisa.nombre + " queres comprar?"));
-            if (cantidadSeleccionada > camisa.cantidad) {
-                alert("No contamos con el stock ingresado, por favor ingrese otra cantidad")
-                cantidadSeleccionada = parseInt(prompt("Cuantos " + camisa.nombre + " queres comprar?"))
-            } else {
-                alert("Queres comprar " + cantidadSeleccionada + " " + camisa.nombre);
-            }
-            seguirComprando = confirm("Queres seguir comprando?");
-            if (seguirComprando == true) {
-                prendaSeleccionada = prompt("Que prenda queres comprar?")
-            }
+            comprar(camisa);
             break;
 
         case remera.nombre.toLowerCase():
-            alert("Seleccionaste " + remera.nombre);
-            alert("El color en stock es " + remera.color + " y el talle es " + remera.talle);
-            alert("El costo por unidad es de $" + remera.precio);
-            cantidadSeleccionada = parseInt(prompt("Cuantos " + remera.nombre + " queres comprar?"));
-            if (cantidadSeleccionada > remera.cantidad) {
-                alert("No contamos con el stock ingresado, por favor ingrese otra cantidad")
-                cantidadSeleccionada = parseInt(prompt("Cuantos " + remera.nombre + " queres comprar?"))
-            } else {
-                alert("Queres comprar " + cantidadSeleccionada + " " + remera.nombre);
-            }
-            seguirComprando = confirm("Queres seguir comprando?");
-            if (seguirComprando == true) {
-                prendaSeleccionada = prompt("Que prenda queres comprar?")
-            }
+            comprar(remera);
             break;
-
 
         default:
-            prendaSeleccionada = prompt ("La prenda seleccionada no esta en stock actualmente, por favor ingrese otra prenda");
+            alert("La prenda seleccionada no esta en stock actualmente, por favor ingrese otra prenda");
+            alert("Las prendas en stock actualmente son " + (buzo.nombre) + " , " + (pantalon.nombre) + " , " + (camisa.nombre) + " , " + (remera.nombre) + ".")
+           
     }
+
 }
 
-// 3.MOSTRAR LOS PRODUCTOS DEL CARRITO, CANTIDADES Y SUBTOTAL
+//4.DAR A ELEGIR ENVIO O RETIRO POR EL LOCAL Y TOTAL DE LA COMPRA
 
-let Subtotal = precio * cantidadSeleccionada
+let envio = prompt ("Elegi ENVIO A DOMICILIO o RETIRAR POR EL LOCAL").toLowerCase()
+let datosEnvio = ""
+let datosRetiro = ""
+let totalAbonar = subtotal + 1500
 
-function subtotal () {
+if ((envio == "envio a domicilio") && (subtotal >= 10000)) {
+    alert ("El envio a domicilio es gratis")
+    alert ("El total abonar es $"+subtotal)
+    datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
+} else if ((envio == "envio a domicilio") && (subtotal < 10000)) {
+    alert ("El costo del envio a domicilio es de $1500")
+    alert ("El total abonar es $"+totalAbonar)
+    datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
+} else (envio == "retirar por el local"); {
+    datosRetiro = prompt ("Tu pedido estara disponible para retirar en los proximos 7 dias habiles, te enviaremos un mensaje cuando este disponible. Dejanos tu nombre completo y telefono")
+}   
 
-    switch (Subtotal) {
-        case prendaSeleccionada == buzo.nombre:
-            alert("El subtotal de  la compra es de " +Subtotal);
-            break;
-        case prendaSeleccionada == pantalon.nombre:
-            alert("El subtotal de  la compra es de " +Subtotal);
-            break;
-        case prendaSeleccionada == camisa.nombre:
-            alert("El subtotal de  la compra es de " +Subtotal);
-            break;
-        case prendaSeleccionada == remera.nombre:
-            alert("El subtotal de  la compra es de " +Subtotal);
-            break;
-        default:
-            ("Los datos ingresados no son correctos");
-    }
-}
-
-subtotal ();
-
-//4.DAR A ELEGIR ENVIO O RETIRO POR EL LOCAL
-
-let envio = prompt("Elegi ENVIO A DOMICILIO o RETIRARLO POR UN LOCAL")
-
-if (envio == "envio a domicilio") {
-    envio = prompt("Ingresa tus datos: nombre completo, domicilio, localidad, codigo postal y telefono de contacto.")
-} else {
-    alert("Podes retirar tu pedido por el local de Olivos dentro de los proximos 7 dias habiles, te enviaremos un mensaje cuando ya este disponible")
-}
-
-//5.MOSTRAR EL PRECIO TOTAL ABONAR
-
-
+// el condicional no se corta cuando elijo envio a domicilio, aparece el else tambien, si elijo solo retirar por el local figura solo el else.
