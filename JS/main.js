@@ -1,36 +1,21 @@
 //1.CREAR PRODUCTOS CON SUS RESPECTIVAS CARACTERISTICAS, PRECIOS, CANTIDAD, ETC
 
-const buzo = {
-    nombre: "Buzo Anorak",
-    color: "Negro",
-    talle: "XL",
-    cantidad: 10,
-    precio: 7000
+const nombrePrendas = [];
+class Prendas {
+    constructor (nombre,color,talle,cantidad,precio) {
+        this.nombre = nombre;
+        this.color = color;
+        this.talle = talle;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        nombrePrendas.push(nombre)
+    }
 }
 
-const pantalon = {
-    nombre: "Jean Regular",
-    color: "Azul",
-    talle: 48,
-    cantidad: 5,
-    precio: 10000
-}
-
-const camisa = {
-    nombre: "Camisa Firenze",
-    color: "Blanco",
-    talle: "M",
-    cantidad: 7,
-    precio: 5000
-}
-
-const remera = {
-    nombre: "Remera Roma",
-    color: "Rojo",
-    talle: "S",
-    cantidad: 10,
-    precio: 3000
-}
+const buzo = new Prendas("Buzo Anorak", "Negro", "XL", 10, 7000)
+const pantalon = new Prendas("Jean Regular", "Azul", "48", 5, 10000)
+const camisa = new Prendas("Camisa Firenze", "Blanco", "M", 7, 5000)    
+const remera = new Prendas("Remera Roma", "Rojo", "S", 10, 3000)
 
 // //2.INTERACCION CON EL USUARIO, SELECCION DE ARTICULO A COMPRAR, CANTIDAD. MUESTRA DE SUBTOTAL DE LA COMPRA
 
@@ -39,8 +24,8 @@ let seguirComprando = true
 let subtotal = 0
 
 const nombre = prompt("Ingresa tu nombre")
-alert("Hola " + nombre + ", Bienvenida a Mango Indumentaria")
-alert("Las prendas en stock actualmente son " + (buzo.nombre) + " , " + (pantalon.nombre) + " , " + (camisa.nombre) + " , " + (remera.nombre) + ".")
+alert("Hola " + nombre + ", Bienvenida a Racer Indumentaria")
+alert("Las prendas en stock actualmente son "+nombrePrendas.join(", "))
 let prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
 
 
@@ -90,7 +75,7 @@ while (seguirComprando != false) {
 
         default:
             alert("La prenda seleccionada no esta en stock actualmente, por favor ingrese otra prenda");
-            alert("Las prendas en stock actualmente son " + (buzo.nombre) + " , " + (pantalon.nombre) + " , " + (camisa.nombre) + " , " + (remera.nombre) + ".")
+            alert("Las prendas en stock actualmente son "+nombrePrendas.join(", "))
             prendaSeleccionada = prompt("Que prenda queres comprar?").toLowerCase()
            
     }
@@ -104,14 +89,21 @@ let datosEnvio = ""
 let datosRetiro = ""
 let totalAbonar = subtotal + 1500
 
-if ((envio == "envio a domicilio") && (subtotal >= 10000)) {
-    alert ("El envio a domicilio es gratis")
-    alert ("El total abonar es $"+subtotal)
-    datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
-} else if ((envio == "envio a domicilio") && (subtotal < 10000)) {
-    alert ("El costo del envio a domicilio es de $1500")
-    alert ("El total abonar es $"+totalAbonar)
-    datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
-} else {
-    datosRetiro = prompt ("Tu pedido estara disponible para retirar en los proximos 7 dias habiles, te enviaremos un mensaje cuando este disponible. Dejanos tu nombre completo y telefono")
+function Envio () {
+
+    if ((envio == "envio a domicilio") && (subtotal >= 10000)) {
+        alert ("El envio a domicilio es gratis")
+        alert ("El total abonar es $"+subtotal)
+        datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
+    } else if ((envio == "envio a domicilio") && (subtotal < 10000)) {
+        alert ("El costo del envio a domicilio es de $1500")
+        alert ("El total abonar es $"+totalAbonar)
+        datosEnvio = prompt ("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
+    } else {
+        datosRetiro = prompt ("Tu pedido estara disponible para retirar en los proximos 7 dias habiles, te enviaremos un mensaje cuando este disponible. Dejanos tu nombre completo y telefono")
+    }   
+
 }   
+
+Envio ();
+
