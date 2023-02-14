@@ -13,7 +13,7 @@ class Prendas {
 }
 
 const buzoAnorak = new Prendas("Buzo Anorak", "Verde Lima", "XL", 10, 10000)
-const jeanRegular = new Prendas("Jean Regular", "Azul", "48", 5, 12000)
+const joggerWashed = new Prendas("Jogger Washed", "Negro", "48", 5, 12000)
 const camisaFirenze = new Prendas("Camisa Firenze", "Blanco", "M", 7, 9000)
 const remeraRoma = new Prendas("Remera Roma", "Blanco", "S", 10, 6000)
 const buzoCapa = new Prendas("Buzo Capa", "Rosa", "S", 10, 11000)
@@ -65,8 +65,8 @@ while (seguirComprando != false) {
             comprar(buzoAnorak);
             break;
 
-        case jeanRegular.nombre.toLowerCase():
-            comprar(jeanRegular);
+        case joggerWashed.nombre.toLowerCase():
+            comprar(joggerWashed);
             break;
 
         case camisaFirenze.nombre.toLowerCase():
