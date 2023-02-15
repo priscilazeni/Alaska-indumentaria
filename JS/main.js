@@ -1,26 +1,3 @@
-//1.CREAR PRODUCTOS CON SUS RESPECTIVAS CARACTERISTICAS, PRECIOS, CANTIDAD, ETC
-
-const nombrePrendas = [];
-class Prendas {
-    constructor(nombre, color, talle, cantidad, precio) {
-        this.nombre = nombre;
-        this.color = color;
-        this.talle = talle;
-        this.cantidad = cantidad;
-        this.precio = precio;
-        nombrePrendas.push(nombre)
-    }
-}
-
-const buzoAnorak = new Prendas("Buzo Anorak", "Verde Lima", "XL", 10, 10000)
-const joggerWashed = new Prendas("Jogger Washed", "Negro", "48", 5, 12000)
-const camisaFirenze = new Prendas("Camisa Firenze", "Blanco", "M", 7, 9000)
-const remeraRoma = new Prendas("Remera Roma", "Blanco", "S", 10, 6000)
-const buzoCapa = new Prendas("Buzo Capa", "Rosa", "S", 10, 11000)
-const jeanBoyfriend = new Prendas("Jean Boyfriend", "Azul", "42", 8, 13000)
-const camisaBow = new Prendas("Camisa Bow", "Blanco", "M", 12, 12000)
-const remeraNudos = new Prendas("Remera Nudos", "Negro", "S", 10, 7000)
-
 // //2.INTERACCION CON EL USUARIO, SELECCION DE ARTICULO A COMPRAR, CANTIDAD. MUESTRA DE SUBTOTAL DE LA COMPRA
 
 let cantidadSeleccionada = 0
