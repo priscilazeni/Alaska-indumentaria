@@ -49,7 +49,7 @@ function Envio() {
         alert("El total abonar es $" + totalAbonar)
         datosEnvio = prompt("Ingresa nombre completo, direccion, localidad, codigo postal y telefono para realizar el envio")
     } else {
-        datosRetiro = prompt("Tu pedido estara disponible para retirar en los proximos 7 dias habiles, te enviaremos un mensaje cuando este disponible. Dejanos tu nombre completo y telefono")
+        datosRetiro = prompt("Tu pedido estara disponible para retirar en los proximos 10 dias habiles, te enviaremos un mensaje cuando este disponible. Dejanos tu nombre completo y telefono")
     }
 
 }
