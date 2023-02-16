@@ -39,7 +39,7 @@ do {
 function mostrarCarrito () {
     let mensaje = "Estos son los productos de tu carrito\n";
     carrito.forEach((producto) => {
-        mensaje += producto.nombre+ ": "+cantidadSeleccionada+"\n";
+        mensaje += producto.nombre+ ": "+producto.cantidad+"\n";
     })
     alert(mensaje);
 }
