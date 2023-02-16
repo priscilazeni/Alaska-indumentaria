@@ -19,7 +19,8 @@ do {
     } else {
         alert("Queres comprar " + cantidadSeleccionada + " " + objetoSeleccionado.nombre);
         subtotal += cantidadSeleccionada * objetoSeleccionado.precio;
-        carrito.push(objetoSeleccionado,cantidadSeleccionada);
+        objetoSeleccionado.cantidad = cantidadSeleccionada;
+        carrito.push(objetoSeleccionado);
     }
 
     seguirComprando = confirm("Queres seguir comprando?");
@@ -27,10 +28,21 @@ do {
     if (seguirComprando == true) {
         
     } else {
+        mostrarCarrito();
         alert("El subtotal de tu compra es de: $"+subtotal);
     }
 
 } while (seguirComprando);
+
+
+
+function mostrarCarrito () {
+    let mensaje = "Estos son los productos de tu carrito\n";
+    carrito.forEach((producto) => {
+        mensaje += producto.nombre+ ": "+cantidadSeleccionada+"\n";
+    })
+    alert(mensaje);
+}
 
 
 let envio = prompt("Elegi ENVIO A DOMICILIO o RETIRAR POR EL LOCAL").toLowerCase()
