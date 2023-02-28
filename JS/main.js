@@ -1,11 +1,45 @@
-let filtroBuzos = document.getElementById("buzos");
-filtroBuzos.addEventListener("click", mostrarCategoria);
- function mostrarCategoria() {
-    const resultado = productos.filter((producto) => producto.categoria.includes("Buzos"));
+// Construccion de las Card
+
+const contenedor = document.getElementById("contenedor");
+console.log(contenedor);
+
+productos.forEach((producto) => {
+    const divProd = document.createElement("div");
+    divProd.classList.add("card");
+    divProd.innerHTML = `<a href="./pages/remeraOtis.html">
+    <div class="imgContenedor">
+        <img src="${producto.img}" alt="${producto.nombre}">
+        <img src="${producto.img2}" alt="${producto.nombre}">
+    </div>
+    <div class="infoContenedor">
+        <p>${producto.nombre}</p>
+        <p><b>$${producto.precio}</b></p>
+    </div>
+    <input type="button" value="VER DETALLE" class="btnCarrito">
+</a>`
+
+    contenedor.appendChild(divProd);
+})
+
+
+// filtro del navegador por categorias
+let filtroPrendas = document.getElementsByClassName("btnFiltro");
+
+for (const filtro of filtroPrendas) {
+    filtro.addEventListener("click", mostrarCategoria);
+}
+
+ function mostrarCategoria(e) {
+    e.preventDefault()
+    const id = e.target.id;
+    console.log(id);
+    const resultado = productos.filter(producto => producto.categoria.includes(e.target.id));
     console.log(resultado);
 }
 
-mostrarCategoria();
+
+
+
 
 
 
