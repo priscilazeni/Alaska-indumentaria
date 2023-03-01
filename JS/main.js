@@ -1,12 +1,11 @@
 // Construccion de las Card
 
 const contenedor = document.getElementById("contenedor");
-console.log(contenedor);
 
 productos.forEach((producto) => {
     const divProd = document.createElement("div");
     divProd.classList.add("card");
-    divProd.innerHTML = `<a href="./pages/remeraOtis.html">
+    divProd.innerHTML = `
     <div class="imgContenedor">
         <img src="${producto.img}" alt="${producto.nombre}">
         <img src="${producto.img2}" alt="${producto.nombre}">
@@ -15,14 +14,16 @@ productos.forEach((producto) => {
         <p>${producto.nombre}</p>
         <p><b>$${producto.precio}</b></p>
     </div>
-    <input type="button" value="VER DETALLE" class="btnCarrito">
-</a>`
+    <a href="./pages/${producto.ruta}">
+        <input type="button" value="VER DETALLE" class="btnCarrito">
+    </a>`
 
     contenedor.appendChild(divProd);
-})
+});
 
 
 // filtro del navegador por categorias
+
 let filtroPrendas = document.getElementsByClassName("btnFiltro");
 
 for (const filtro of filtroPrendas) {
@@ -31,11 +32,34 @@ for (const filtro of filtroPrendas) {
 
  function mostrarCategoria(e) {
     e.preventDefault()
-    const id = e.target.id;
-    console.log(id);
-    const resultado = productos.filter(producto => producto.categoria.includes(e.target.id));
-    console.log(resultado);
+    const categoria = e.target.id;
+    const resultado = productos.filter(producto => producto.categoria.includes(categoria));
+    contenedor.innerHTML= '';
+    resultado.forEach((producto) => {
+        const divProd = document.createElement("div");
+        divProd.classList.add("card");
+        divProd.innerHTML = `
+        <div class="imgContenedor">
+            <img src="${producto.img}" alt="${producto.nombre}">
+            <img src="${producto.img2}" alt="${producto.nombre}">
+        </div>
+        <div class="infoContenedor">
+            <p>${producto.nombre}</p>
+            <p><b>$${producto.precio}</b></p>
+        </div>
+            <a href="./pages/${producto.ruta}">
+                <input type="button" value="VER DETALLE" class="btnCarrito">
+            </a>`
+
+            contenedor.appendChild(divProd);
+        });
 }
+
+// Detalle de cada card
+
+const contenedorCard = document.getElementById("contenedorCard");
+console.log(contenedorCard);
+
 
 
 
