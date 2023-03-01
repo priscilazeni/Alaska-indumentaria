@@ -10,13 +10,28 @@ productos.forEach((producto) => {
         <img src="${producto.img}" alt="${producto.nombre}">
         <img src="${producto.img2}" alt="${producto.nombre}">
     </div>
+
     <div class="infoContenedor">
-        <p>${producto.nombre}</p>
-        <p><b>$${producto.precio}</b></p>
+        <div class="infoUno">
+            <p class=""titulo>${producto.nombre}</p>
+            <p><b>$${producto.precio}</b></p>
+        </div>
+
+        <div class="detalleContenedor">
+            <p class="color"><b>color:</b></p>
+            <p>${producto.color}</p>
+        </div>
+
+        <div class="btnTalles">
+            <p class="talle"><b>talle:</b></p>
+            <input type="button" value=${producto.talle1} class="talles">
+            <input type="button" value=${producto.talle2} class="talles">
+            <input type="button" value=${producto.talle3} class="talles">
+            <input type="button" value=${producto.talle4} class="talles">
+        </div>
     </div>
-    <a href="./pages/${producto.ruta}">
-        <input type="button" value="VER DETALLE" class="btnCarrito">
-    </a>`
+
+        <input type="button" value="COMPRAR" class="btnCarrito">`
 
     contenedor.appendChild(divProd);
 });
@@ -39,26 +54,38 @@ for (const filtro of filtroPrendas) {
         const divProd = document.createElement("div");
         divProd.classList.add("card");
         divProd.innerHTML = `
-        <div class="imgContenedor">
-            <img src="${producto.img}" alt="${producto.nombre}">
-            <img src="${producto.img2}" alt="${producto.nombre}">
-        </div>
-        <div class="infoContenedor">
-            <p>${producto.nombre}</p>
+    <div class="imgContenedor">
+        <img src="${producto.img}" alt="${producto.nombre}">
+        <img src="${producto.img2}" alt="${producto.nombre}">
+    </div>
+
+    <div class="infoContenedor">
+        <div class="infoUno">
+            <p class=""titulo>${producto.nombre}</p>
             <p><b>$${producto.precio}</b></p>
         </div>
-            <a href="./pages/${producto.ruta}">
-                <input type="button" value="VER DETALLE" class="btnCarrito">
-            </a>`
+
+        <div class="detalleContenedor">
+            <p class="color"><b>color:</b></p>
+            <p>${producto.color}</p>
+        </div>
+
+        <div class="btnTalles">
+            <p class="talle"><b>talle:</b></p>
+            <input type="button" value=${producto.talle1} class="talles">
+            <input type="button" value=${producto.talle2} class="talles">
+            <input type="button" value=${producto.talle3} class="talles">
+            <input type="button" value=${producto.talle4} class="talles">
+        </div>
+    </div>
+
+        <input type="button" value="COMPRAR" class="btnCarrito">`
 
             contenedor.appendChild(divProd);
         });
 }
 
-// Detalle de cada card
-
-const contenedorCard = document.getElementById("contenedorCard");
-console.log(contenedorCard);
+// Seleccion de talle y agregando a carrito
 
 
 
@@ -76,8 +103,6 @@ console.log(contenedorCard);
 
 
 
-
-// const carrito = [];
 
 // let prendaSeleccionada = " "
 // let objetoSeleccionado = " "

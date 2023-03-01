@@ -126,13 +126,25 @@ nav ul li a:hover {
 
 .infoContenedor {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
-.contenedor .card a {
-    text-decoration: none;
-    color:  #252525;
+.infoUno {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.detalleContenedor {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btnTalles {
+    margin-top: 20px;
 }
 
 .btnCarrito {
@@ -150,66 +162,17 @@ nav ul li a:hover {
     background-color: white;
 }
 
-.cardCompleta {
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-}
-
-.cardCompleta img {
-    width: 30%;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.cardCompleta .infoCompleta {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.titulo {
-    font-size: 20px;
-}
-
-.precio {
-    margin-bottom: 10px;
-}
-
-.cuotas {
-    margin-top: 10px;
-}
-
-.infoPrenda, .color, .talle {
-   margin-top: 15px;
-   line-height: 25px;
-}
-
-.infoCompleta div .talles {
-    width: 9%;
+.talles {
+    width: 15%;
     padding: 10px;
     background-color:  #252525;
     margin-top: 15px;
-    border-radius: 25px;
+    border-radius: 20px;
     color: white;
 }
 
-.infoCompleta div .talles:hover, .infoCompleta div .talles:focus {
+.talles:hover, .talles:focus {
    color:  #252525;
-    background-color: white;
-}
-
-.infoCompleta .btnCarritoDos {
-    width: 40%;
-    padding: 10px;
-    background-color:  #252525;
-    margin-top: 30px;
-    border-radius: 25px;
-    color: white;
-}
-
-.btnCarritoDos:focus, .btnCarritoDos:hover {
-    color:  #252525;
     background-color: white;
 }
 
