@@ -1,40 +1,47 @@
-// Construccion de las Card
+// Construccion del carrito
 
-const contenedor = document.getElementById("contenedor");
-
-productos.forEach((producto) => {
-    const divProd = document.createElement("div");
-    divProd.classList.add("card");
-    divProd.innerHTML = `
-    <div class="imgContenedor">
-        <img src="${producto.img}" alt="${producto.nombre}">
-        <img src="${producto.img2}" alt="${producto.nombre}">
+const contenedorCarrito = document.getElementById("mostrarCarrito");
+const divCarrito = document.createElement("div");
+divCarrito.classList.add("modal");
+divCarrito.innerHTML = `
+    <div class="resumenCarrito">
+        <button class="cerrar">X</button>
+        <p>Producto</p>
+        <p class="precio">Precio unitario</p>
+        <p class="cantidad">Cantidad</p>
     </div>
 
-    <div class="infoContenedor">
-        <div class="infoUno">
-            <p class=""titulo>${producto.nombre}</p>
-            <p><b>$${producto.precio}</b></p>
-        </div>
+    <div class="compraFinal">
+        <p class="resumen">RESUMEN DE COMPRA</p>
+        <p class="subtotal">Subtotal</p>
+        <p class="envio">Envio</p>
+        <p class="total"><b>TOTAL</b></p>
+        <button class="comprar">INICIAR COMPRA</button>
+    </div> `
 
-        <div class="detalleContenedor">
-            <p class="color"><b>color:</b></p>
-            <p>${producto.color}</p>
-        </div>
+contenedorCarrito.appendChild(divCarrito);
 
-        <div class="btnTalles">
-            <p class="talle"><b>talle:</b></p>
-            <input type="button" value=${producto.talle1} class="talles">
-            <input type="button" value=${producto.talle2} class="talles">
-            <input type="button" value=${producto.talle3} class="talles">
-            <input type="button" value=${producto.talle4} class="talles">
-        </div>
-    </div>
+// Abrir y cerrar carrito
 
-        <input type="button" value="COMPRAR" class="btnCarrito">`
+// const abrirCarrito = document.getElementsByClassName("carrito");
+// const cerrarCarrito = document.getElementsByClassName("cerrar");
+// const modal = document.getElementsByClassName("modal");
 
-    contenedor.appendChild(divProd);
-});
+
+// abrirCarrito.addEventListener("click", function() {
+//     modal.style.display = "block";
+// });
+
+
+// cerrarCarrito.addEventListener("click", function() {
+//     modal.style.display = "none";
+// });
+
+// modal.addEventListener("click", function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";    
+//     }
+// });
 
 
 // filtro del navegador por categorias
@@ -47,7 +54,7 @@ for (const filtro of filtroPrendas) {
 
  function mostrarCategoria(e) {
     e.preventDefault()
-    const categoria = e.target.id;
+    const categoria = e.target.id;  
     const resultado = productos.filter(producto => producto.categoria.includes(categoria));
     contenedor.innerHTML= '';
     resultado.forEach((producto) => {
@@ -66,26 +73,79 @@ for (const filtro of filtroPrendas) {
         </div>
 
         <div class="detalleContenedor">
-            <p class="color"><b>color:</b></p>
-            <p>${producto.color}</p>
+            <p class="color"><b>color:</b> ${producto.color} </p>
         </div>
 
-        <div class="btnTalles">
-            <p class="talle"><b>talle:</b></p>
-            <input type="button" value=${producto.talle1} class="talles">
-            <input type="button" value=${producto.talle2} class="talles">
-            <input type="button" value=${producto.talle3} class="talles">
-            <input type="button" value=${producto.talle4} class="talles">
+        <div>
+            <p class="talle"><b>talle:</b> ${producto.talle}</p>
         </div>
     </div>
 
-        <input type="button" value="COMPRAR" class="btnCarrito">`
+        <input type="button" value="COMPRAR" id="comprar" class="btnCarrito">`
 
             contenedor.appendChild(divProd);
+
+            const btnCarrito = document.getElementById("comprar");
+
+            btnCarrito.addEventListener("click", () => {
+                agregarAlCarrito(producto.id)
+            })
         });
 }
 
-// Seleccion de talle y agregando a carrito
+
+// Construccion de las Card
+
+const contenedor = document.getElementById("contenedor");
+
+productos.forEach((producto) => {
+    const divProd = document.createElement("div");
+    divProd.classList.add("card");
+    divProd.innerHTML = `
+
+    <div class="imgContenedor">
+        <img src="${producto.img}" alt="${producto.nombre}">
+        <img src="${producto.img2}" alt="${producto.nombre}">
+    </div>
+
+    <div class="infoContenedor">
+        <div class="infoUno">
+            <p class=""titulo>${producto.nombre}</p>
+            <p><b>$${producto.precio}</b></p>
+        </div>
+
+        <div class="detalleContenedor">
+            <p class="color"><b>color:</b> ${producto.color}</p>
+        </div>
+
+        <div>
+            <p class="talle"><b>talle:</b> ${producto.talle}</p>
+        </div>
+    </div>
+
+        <input type="button" value="COMPRAR" id="comprar" class="btnCarrito">`
+
+    contenedor.appendChild(divProd);
+
+    const btnCarrito = document.getElementById("comprar");
+
+    btnCarrito.addEventListener("click", () => {
+        agregarAlCarrito(producto.id)
+    })
+
+});
+
+
+// Agregando a carrito
+
+let carrito = [];
+
+const agregarAlCarrito = (productoId) => {
+    const item = productos.find((producto) => producto.id === productoId);
+    carrito.push(item);
+    // console.log(carrito);
+    console.log(item);
+}
 
 
 
