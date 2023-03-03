@@ -28,7 +28,7 @@ nav {
     width: 40%;
 }
 
-.carrito {
+#carrito {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -36,6 +36,10 @@ nav {
     margin-top: 10px;
     text-decoration: none;
     color:  #252525;
+}
+
+#carrito:hover {
+    cursor: pointer;
 }
 
 .button {
@@ -80,13 +84,76 @@ nav ul li a:hover {
     color: lightgray;
 }
 
+#modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    right: 0;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    width: 30%;
+    height: 80%;
+    margin-right: 10px;
+
+}
+
+.prodSeleccionado {
+    margin: 10px;
+}
+
+.producto, .precio, .cantidad, .btnEliminar {
+    color: white;
+    -webkit-animation-name: animarsuperior;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animarsuperior;
+    animation-duration: 0.5s;
+    position: relative;
+}
+
+.imgProdCarrito {
+    width: 30%;
+    margin-top: 10px;
+    border-radius: 5px;
+    -webkit-animation-name: animarsuperior;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animarsuperior;
+    animation-duration: 0.5s;
+    position: relative;
+}
+
+.btnEliminar {
+    width: 25%;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    color: #252525;
+    margin-top: 10px;
+}
+
+.btnEliminar:hover {
+    cursor: pointer;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animarsuperior {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
 .contenedor {
     min-height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    gap: 3px;    
+    gap: 3px;
     margin-top: 30px;
     padding-left: 10px;
 }
@@ -143,10 +210,6 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
-.btnTalles {
-    margin-top: 20px;
-}
-
 .btnCarrito {
     width: 60%;
     padding: 10px;
@@ -157,24 +220,12 @@ nav ul li a:hover {
     color: white;
 }
 
-.btnCarrito:focus, .btnCarrito:hover {
+.btnCarrito:hover {
     color:  #252525;
     background-color: white;
+    cursor: pointer;
 }
 
-.talles {
-    width: 15%;
-    padding: 10px;
-    background-color:  #252525;
-    margin-top: 15px;
-    border-radius: 20px;
-    color: white;
-}
-
-.talles:hover, .talles:focus {
-   color:  #252525;
-    background-color: white;
-}
 
 footer {
     display: grid;
@@ -203,7 +254,7 @@ footer {
 
 .contactoDos p, .locales p {
     font-size: 12px;
-} 
+}
 
 .contactoDos a img, .locales a img {
     width: 20px;
@@ -260,70 +311,3 @@ footer {
     margin-top: 10px;
 }
 
-#mostrarCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.cerrar {
-   background-color: #252525;
-   color: white;
-   padding: 10px;
-   border-radius: 10px;
-}
-
-.cerrar:hover {
-    background-color: white;
-    color: #252525;
-}
-
-.resumenCarrito {
-    display: flex;
-    flex-direction: row;
-    gap: 15%;
-    width: 90%;
-}
-
-.compraFinal {
-    background-color: lightgray;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-}
-
-.resumen {
-    text-align: center;
-    margin: 20px;
-}
-
-.subtotal, .envio, .total {
-    margin: 10px;
-}
-
-.comprar {
-    background-color:  #252525;
-    color: white;
-    border-radius: 20px;
-    padding: 10px;
-    margin: 10px;
-    margin-left: 25%;
-    width: 50%;
-}
-
-.comprar:hover {
-    color:  #252525;
-    background-color: white;
-}
