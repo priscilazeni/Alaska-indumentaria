@@ -6,36 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alaska Tienda</title>
+    <!--Favicon-->
+    <link rel="shortcout icon" href="./multimedia/favicon.png">
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="./style.css">
-
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 
 <body>
 
     <nav>
-        <a href="./index.html" class="contenedorLogo">
-            <img src="./multimedia/logo.png" alt="logo" class="logo">
-        </a>
+            <img src="./multimedia/logo.png" alt="logo" class="logo" id="logo">
         <ul>
-            <li><a href="" class="btnFiltro" id="buzos">Buzos</a></li>
-            <li><a href="" class="btnFiltro" id="pantalones">Pantalones</a></li>
-            <li><a href="" class="btnFiltro" id="camisas">Camisas</a></li>
-            <li><a href="" class="btnFiltro" id="remeras">Remeras</a></li>
+            <li><a href="" class="btnFiltro" id="buzos">BUZOS</a></li>
+            <li><a href="" class="btnFiltro" id="pantalones">PANTALONES</a></li>
+            <li><a href="" class="btnFiltro" id="camisas">CAMISAS</a></li>
+            <li><a href="" class="btnFiltro" id="remeras">REMERAS</a></li>
         </ul>
-        <div>
+        <div class="contenedorCarrito">
             <span id="carrito">
                 <img src="./multimedia/carrito-compras.png" alt="carrito-compras" class="imgCarrito">
-                <p class="miCarrito">Mi carrito</p>
+                <p class="miCarrito">MI CARRITO</p>
             </span>
         </div>
     </nav>
 
-    <section id="modal"></section>
+    <div id="miModal" class="modalContenedor">
+        <span class="cerrar">X</span>
+        <div id="modalContenido"></div>
+        <div class="modalPago">
+            <p id="total">TOTAL $0</p>
+            <p id="envio">ENVIO $0</p>
+            <button id="comprar">COMPRAR</button>
+        </div>  
+    </div>
 
     <section class="contenedor" id="contenedor"></section>
 
@@ -137,8 +147,9 @@
         </div>
     </footer>
 
-    <script src="JS/data.js"></script>
+
     <script src="JS/main.js"></script>
+
 
 </body>
 

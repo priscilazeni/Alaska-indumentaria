@@ -1,0 +1,100 @@
+[
+    {
+        "id": "1",
+        "nombre": "buzo buda", 
+        "color": "blanco", 
+        "talle": "s", 
+        "cantidad": "1", 
+        "precio": 10000, 
+        "categoria": "buzos", 
+        "img" : "./multimedia/buzo-buda.jpg", 
+        "img2": "./multimedia/buzo-buda2.jpg"
+
+    },
+    {
+        "id": "2", 
+        "nombre": "jogger washed", 
+        "color": "celeste", 
+        "talle": "48", 
+        "cantidad": "1", 
+        "precio": 12000, 
+        "categoria": "pantalones", 
+        "img": "./multimedia/jogger-washed.jpg", 
+        "img2": "./multimedia/jogger-washed2.jpg"
+
+    },
+    {
+        "id": "3", 
+        "nombre": "camisa firenze", 
+        "color": "amarillo", 
+        "talle": "l", 
+        "cantidad": "1", 
+        "precio": 9000, 
+        "categoria": "camisas", 
+        "img": "./multimedia/camisa-firenze.jpg", 
+        "img2": "./multimedia/camisa-firenze2.jpg"
+
+    },
+    {
+        "id": "4", 
+        "nombre": "remera roma", 
+        "color": "blanco",
+        "talle": "m", 
+        "cantidad": "1", 
+        "precio": 6000, 
+        "categoria": "remeras",
+        "img": "./multimedia/remera-roma.jpg", 
+        "img2": "./multimedia/remera-roma2.jpg"
+
+    },
+    {
+        "id": "5", 
+        "nombre": "hoodie power", 
+        "color": "negro", 
+        "talle": "xl", 
+        "cantidad": "1", 
+        "precio": 11000, 
+        "categoria": "buzos", 
+        "img": "./multimedia/hoodie-power.jpg", 
+        "img2": "./multimedia/hoodie-power2.jpg"
+
+    },
+    {
+        "id": "6", 
+        "nombre": "jean boyfriend", 
+        "color": "azul", 
+        "talle": "46", 
+        "cantidad": "1", 
+        "precio": 13000, 
+        "categoria": "pantalones", 
+        "img": "./multimedia/jean-boyfriend2.jpg", 
+        "img2": "./multimedia/jean-boyfriend.jpg"
+
+    },
+    {
+
+        "id": "7", 
+        "nombre": "camisa bow", 
+        "color": "blanco", 
+        "talle": "s", 
+        "cantidad": "1", 
+        "precio": 12000, 
+        "categoria": "camisas", 
+        "img": "./multimedia/camisa-bow.jpg", 
+        "img2": "./multimedia/camisa-bow2.jpg"
+    },
+    {
+        "id": "8", 
+        "nombre": "remera otis", 
+        "color": "rosa",
+        "talle": "l", 
+        "cantidad": "1",
+        "precio": 7000, 
+        "categoria": "remeras", 
+        "img": "./multimedia/remera-otis.jpg", 
+        "img2": "./multimedia/remera-otis2.jpg"
+
+    }
+]
+
+
